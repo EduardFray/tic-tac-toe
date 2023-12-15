@@ -78,7 +78,7 @@ function checkGameResult() {
         if (fields[a] && fields[a] === fields[b] && fields[a] === fields[c]) {
             // Markiere die gewinnenden Felder und zeige eine Linie an
             markWinningFields(combination);
-            
+
             // Zeige eine Linie an
             drawWinningLine(combination);
 
@@ -95,6 +95,14 @@ function checkGameResult() {
         alert('Unentschieden!');
         resetGame();
     }
+}
+
+function resetGame() {
+    // Setze alle Felder auf null zurück
+    fields = Array(9).fill(null);
+
+    // Rufe die render-Funktion auf, um das Spielbrett zu aktualisieren
+    render();
 }
 
 function markWinningFields(combination) {
